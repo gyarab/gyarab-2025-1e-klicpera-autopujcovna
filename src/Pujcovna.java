@@ -132,9 +132,10 @@ public class Pujcovna {
 
     public Pujcka pujcitAuto(int pocetDni, Auto auto, Zakaznik zakaznik) {
 
-        if (!auto.isJeVolne()) {
-            throw new IllegalStateException("Bohužel, auto už je vypůjčené");
-        }
+        try {
+            if (!auto.isJeVolne()) {
+                throw new IllegalStateException("Bohužel, auto už je vypůjčené");
+            }
 
             auto.setJeVolne(false);
             auto.setTedZrovnaPujcene(true);
@@ -146,6 +147,11 @@ public class Pujcovna {
             zakaznik.zvyseniPoctuZakPujcek();
 
             return pujckaX;
+
+        } catch (IllegalStateException e) {
+            System.out.println(e.getMessage());
+            return null;
+        }
     }
 
 
@@ -192,11 +198,9 @@ public class Pujcovna {
 
     public double celkVydelek() {
         double suma = 0;
-        for (int i = 0; i < pocetPujcek; i++) {
+        for(int i = 0; i < pocetPujcek; i++) {
             suma += pujcky[i].totalCena();
         }
         return suma;
-    }
-
-
+     }
 }

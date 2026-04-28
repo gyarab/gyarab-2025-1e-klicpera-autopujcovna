@@ -30,11 +30,11 @@ void main() {
 //    pujcovna.addZakaznik(zakaznik3);
     pujcovna.addAuto(auto1);
     pujcovna.addAuto(auto2);
-
+    pujcovna.addAuto(auto3);
     pujcovna.addAuto(auto4);
     pujcovna.addAuto(auto5);
     pujcovna.addAuto(auto6);
-    pujcovna.addAuto(auto3);
+
 
 
     int vstupNum;
