@@ -3,37 +3,52 @@ import java.util.Scanner;
 void main() {
     Scanner sc = new Scanner(System.in);
 
-    Auto auto1 = new Auto(1,"Škoda", "Octavia 1", true, 2000, 550);
-    Auto auto2 = new Auto(2,"Škoda", "Octavia 1", true, 2000, 600);
-    Auto auto3 = new Auto(3,"Škoda", "Octavia 2", false, 2008, 700);
-    Auto auto4 = new Auto(4, "Subaru", "Impreza WRX STI 22B", true, 1998, 1800);
-    Auto auto5 = new Auto(5, "Mitsubishi", "Lancer Evo 6.5 TME", true, 2001, 2500);
+    Auto auto1 = new Auto(1,"Škoda", "Octavia 1", true, 1997, 550);
+    Auto auto2 = new Auto(2,"Škoda", "Octavia 1", true, 2002, 600);
+    Auto auto3 = new Auto(3,"Škoda", "Octavia 2", false, 2012, 700);
+    Auto auto4 = new Auto(4, "Subaru", "Impreza WRX STI", true, 1998, 1700);
+    Auto auto5 = new Auto(5, "Mitsubishi", "Lancer Evo VI", true, 2001, 1700);
     Auto auto6 = new Auto(6, "Mazda", "Miata MX-5 NA", true, 1995, 1000);
-
-
-
-
-    Zakaznik zakaznik1 = new Zakaznik(1,"Martin", "Novák",123456789);
-//    Zakaznik zakaznik2 = new Zakaznik(2, "Bunta", "Fujiwara", 222333444);
-//    Zakaznik zakaznik3 = new Zakaznik(2, "Tommi", "Mäkinen", 987654321);
-
-
-
-    Pujcka pujcka1 = new Pujcka(7, auto1, zakaznik1);
-//    Pujcka pujcka2 = new Pujcka(5, auto2, zakaznik2);
-//    Pujcka pujcka3 = new Pujcka(3, auto2, zakaznik3);
-
+    Auto auto7 = new Auto(7,"Renault", "Twingo", true, 1996, 400);
+    Auto auto8 = new Auto(8, "Toyota", "GR86", true, 2024, 1100);
+    Auto auto9 = new Auto(9, "BMW", "M3 E46 CSL", true, 2005, 2200);
+    Auto auto10 = new Auto(10, "BMW", "M4 Competition G82", false, 2025, 2000);
+    Auto auto11 = new Auto(11, "Honda", "CRV", false, 2016, 800);
+    Auto auto12 = new Auto(12, "Toyota", "Land Cruiser", true, 2010, 800);
+    Auto auto13 = new Auto(13, "Nissan", "GT-R R34", true, 2001, 2000);
+    Auto auto14 = new Auto(14, "Datsun", "260z", true, 1973, 1500);
+    Auto auto15 = new Auto(15, "Honda", "NSX", true, 1992, 3000);
 
     Pujcovna pujcovna = new Pujcovna();
-    pujcovna.addZakaznik(zakaznik1);
-//    pujcovna.addZakaznik(zakaznik2);
-//    pujcovna.addZakaznik(zakaznik3);
+
     pujcovna.addAuto(auto1);
     pujcovna.addAuto(auto2);
     pujcovna.addAuto(auto3);
     pujcovna.addAuto(auto4);
     pujcovna.addAuto(auto5);
     pujcovna.addAuto(auto6);
+    pujcovna.addAuto(auto7);
+    pujcovna.addAuto(auto8);
+    pujcovna.addAuto(auto9);
+    pujcovna.addAuto(auto10);
+    pujcovna.addAuto(auto11);
+    pujcovna.addAuto(auto12);
+    pujcovna.addAuto(auto13);
+    pujcovna.addAuto(auto14);
+    pujcovna.addAuto(auto15);
+
+
+
+    Zakaznik zakaznik1 = new Zakaznik(1,"Petr", "Pavel",123456789);
+//    Zakaznik zakaznik2 = new Zakaznik(2, "Keichi", "Tsuchiya", 222333444);
+//    Zakaznik zakaznik3 = new Zakaznik(2, "Rowan", "Atkinson", 987654321);
+    pujcovna.addZakaznik(zakaznik1);
+//    pujcovna.addZakaznik(zakaznik2);
+//    pujcovna.addZakaznik(zakaznik3);
+    Pujcka pujcka1 = new Pujcka(7, auto1, zakaznik1);
+//    Pujcka pujcka2 = new Pujcka(5, auto2, zakaznik2);
+//    Pujcka pujcka3 = new Pujcka(3, auto2, zakaznik3);
+
 
 
 
@@ -102,6 +117,7 @@ void main() {
             if (vybraneAuto == null) {
                 System.out.println("ID se neshoduje s žádným nalezeným autem.");
                 System.out.println();
+                continue;
             }
 
             System.out.println("Zadejte na kolik dní si chcete auto vypůjčit:");
@@ -128,8 +144,9 @@ void main() {
 
 
         if (vstupNum == 5) {
-            System.out.println("Zadejte kolik nejvíce byste chtěli zaplatit za auto na den: ");
+            System.out.println("Zadejte kolik nejvíce byste chtěli denně zaplatit za auto: ");
             int maxCena = sc.nextInt();
+            System.out.println("Auta odpovídající Vaší zvolené maximální ceně: ");
             pujcovna.filtrCena(maxCena);
 
         }

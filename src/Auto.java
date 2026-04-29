@@ -106,7 +106,7 @@ public class Auto {
         if (jeVolne) {
             isVolne = "auto je volné ";
         } else if (tedZrovnaPujcene) {
-            isVolne = " auto jste si ted momentalne pujcil! :)";
+            isVolne = " auto jste si právě půjčil";
         } else {
             isVolne = " auto je bohužel momentálně půjčené ";
         }

@@ -57,11 +57,10 @@ public class Zakaznik {
 
     @Override
     public String toString() {
-        return "Zakaznik{" +
-                "id=" + id +
-                ", jmeno='" + jmeno + '\'' +
-                ", prijmeni='" + prijmeni + '\'' +
-                ", telCislo=" + telCislo +
-                '}';
+        return "Zákazník: " +
+                " Id = " + id +
+                ", jméno = " + jmeno +
+                ", příjmení = " + prijmeni +
+                ", telefonní číslo = " + telCislo;
     }
 }

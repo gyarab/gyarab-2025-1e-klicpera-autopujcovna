@@ -118,7 +118,7 @@ public class Pujcovna {
         for (int i = 0; i < pocetAut; i++) {
             if (auta[i].getCenaZaDen() <= maxCena) {
                 nalezeno = true;
-                System.out.println("Auta odpovídající Vaší zvolené maximální ceně: " + auta[i]);
+                System.out.println(auta[i]);
             }
         }
 
@@ -166,8 +166,8 @@ public class Pujcovna {
                 pujcky[i].getAuto().setJeVolne(true);
                 vypisPujcek();
 
-                pujcky[i] = pujcky[pocetPujcek--];
-                pujcky[pocetPujcek--] = null;
+                pujcky[i] = pujcky[pocetPujcek - 1];
+                pujcky[pocetPujcek - 1] = null;
                 pocetPujcek --;
                 vypisPujcek();
             }
