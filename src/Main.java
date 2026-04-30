@@ -40,16 +40,21 @@ void main() {
     pujcovna.addAuto(auto16);
 
 
-    Zakaznik zakaznik1 = new Zakaznik(1,"Petr", "Pavel",123456789);
+//    Zakaznik zakaznik1 = new Zakaznik(1,"Petr", "Pavel", 123456789);
 //    Zakaznik zakaznik2 = new Zakaznik(2, "Keichi", "Tsuchiya", 222333444);
-//    Zakaznik zakaznik3 = new Zakaznik(2, "Rowan", "Atkinson", 987654321);
-    pujcovna.addZakaznik(zakaznik1);
+//    Zakaznik zakaznik3 = new Zakaznik(3, "Rowan", "Atkinson", 987654321);
+
+//    pujcovna.addZakaznik(zakaznik1);
 //    pujcovna.addZakaznik(zakaznik2);
 //    pujcovna.addZakaznik(zakaznik3);
-    Pujcka pujcka1 = new Pujcka(7, auto1, zakaznik1);
+
+//    Pujcka pujcka1 = new Pujcka(7, auto1, zakaznik1);
 //    Pujcka pujcka2 = new Pujcka(5, auto2, zakaznik2);
-//    Pujcka pujcka3 = new Pujcka(3, auto2, zakaznik3);
+//    Pujcka pujcka3 = new Pujcka(3, auto3, zakaznik3);
+
 //    pujcovna.addPujcka(pujcka1);
+//    pujcovna.addPujcka(pujcka2);
+//    pujcovna.addPujcka(pujcka3);
 
 
 
@@ -92,7 +97,6 @@ void main() {
                 System.out.println("Nebyly nalezené žádné shody.");
                 break;
             }
-
 
             System.out.println("Nalezené shody: ");
             for (int i = 0; i < nalezenaAuta.length; i++) {

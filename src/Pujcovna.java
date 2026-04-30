@@ -8,7 +8,6 @@ public class Pujcovna {
 
     public void addAuto(Auto auto) {
         auta[pocetAut++] = auto;
-
     }
 
     public void addZakaznik(Zakaznik zakaznik) {
@@ -23,6 +22,18 @@ public class Pujcovna {
     public void vypisAut() {
         for (int i = 0; i < pocetAut; i++) {
             System.out.println(auta[i]);
+        }
+    }
+
+    public void vypisZakazniku() {
+        for (int i = 0; i < pocetZakazniku; i++) {
+            System.out.println(zakaznici[i]);
+        }
+    }
+
+    public void vypisPujcek() {
+        for (int i = 0; i < pocetPujcek; i++) {
+            System.out.println(pujcky[i]);
         }
     }
 
@@ -44,19 +55,6 @@ public class Pujcovna {
     }
 
 
-
-
-    public void vypisZakazniku() {
-        for (int i = 0; i < pocetZakazniku; i++) {
-            System.out.println(zakaznici[i]);
-        }
-    }
-
-    public void vypisPujcek() {
-        for (int i = 0; i < pocetPujcek; i++) {
-            System.out.println(pujcky[i]);
-        }
-    }
 
     public Auto[] findAuto(String hledejModelAuta) {
         int pocetShod = 0;
@@ -102,7 +100,6 @@ public class Pujcovna {
 
 
 
-// nechat vysvetlit chatem gpt DU
   public Zakaznik findZakId(int hledejZakId) {
         for (int i = 0; i < pocetZakazniku; i++) {
             if (zakaznici[i].getId() == hledejZakId) {
