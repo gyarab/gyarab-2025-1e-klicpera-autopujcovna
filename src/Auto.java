@@ -30,6 +30,7 @@ public class Auto {
     public void setTedZrovnaPujcene(boolean tedZrovnaPujcene){
         this.tedZrovnaPujcene = tedZrovnaPujcene;
     }
+
     public String getZnacka() {
         return znacka;
     }
@@ -61,6 +62,7 @@ public class Auto {
     public void setRokVyroby(int rokVyroby) {
         this.rokVyroby = rokVyroby;
     }
+
 
 
     public boolean jeStarsiNez(int rok) {

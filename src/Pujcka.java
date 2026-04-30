@@ -53,7 +53,7 @@ public class Pujcka {
 
 
         if (pocetDni > 7){
-            slevaInfo.append(" --> Aplikovaná sleva 10% --> \n");
+            slevaInfo.append(" --> Aplikovaná sleva 10% --> ");
         }
 
         if (zakaznik.getPujckyCount() >= 3){
@@ -62,7 +62,7 @@ public class Pujcka {
 
         return " Počet dní: " + pocetDni + ", "
                  + auto +
-                ", Základní cena: " + zakladCeny + " Kč " +
+                "\nZákladní cena: " + zakladCeny + " Kč " +
                 slevaInfo.toString() +
                 " Konečná cena: "  + totalCena() + " Kc ";
     }

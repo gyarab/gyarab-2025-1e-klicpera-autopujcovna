@@ -15,6 +15,10 @@ public class Pujcovna {
         zakaznici[pocetZakazniku++] = zakaznik;
     }
 
+    public void addPujcka(Pujcka pujcka) {
+        pujcky[pocetPujcek++] = pujcka;
+    }
+
 
     public void vypisAut() {
         for (int i = 0; i < pocetAut; i++) {
@@ -161,7 +165,7 @@ public class Pujcovna {
             if (pujcky[i].getAuto().getId() == idAuta) {
                 int pokuta = pujcky[i].pokuta(faktDniPujcene);
                 if (pokuta > 0) {
-                    System.out.println("Byla Vám přidělena pokuta " + pokuta + " Kč za pozdní vrácení půjčenného auta.");
+                    System.out.println("Bylo Vám naúčtováno " + pokuta + " Kč navíc za pozdní vrácení půjčenného auta.");
                 }
                 pujcky[i].getAuto().setJeVolne(true);
                 vypisPujcek();
