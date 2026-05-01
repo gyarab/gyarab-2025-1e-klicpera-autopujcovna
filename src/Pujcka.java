@@ -2,6 +2,7 @@ public class Pujcka {
     private int pocetDni;
     private Auto auto;
     private Zakaznik zakaznik;
+    private int pokuta = 0;
 
     public Pujcka(int pocetDni, Auto auto, Zakaznik zakaznik) {
         this.pocetDni = pocetDni;
@@ -26,7 +27,7 @@ public class Pujcka {
 
     public int pokuta(int faktDniPujcene) {
         if (faktDniPujcene > pocetDni) {
-            int pokuta = (faktDniPujcene - pocetDni) * 500 + ((faktDniPujcene - pocetDni) * auto.getCenaZaDen());
+            pokuta = (faktDniPujcene - pocetDni) * 500 + ((faktDniPujcene - pocetDni) * auto.getCenaZaDen());
             return pokuta;
         }
         return 0;
@@ -50,8 +51,6 @@ public class Pujcka {
 
         StringBuilder slevaInfo = new StringBuilder();
 
-
-
         if (pocetDni > 7){
             slevaInfo.append(" --> Aplikovaná sleva 10% --> ");
         }
@@ -64,6 +63,6 @@ public class Pujcka {
                  + auto +
                 "\nZákladní cena: " + zakladCeny + " Kč " +
                 slevaInfo.toString() +
-                " Konečná cena: "  + totalCena() + " Kc ";
+                " Konečná cena: "  + (totalCena()+pokuta) + " Kc ";
     }
 }

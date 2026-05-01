@@ -4,7 +4,7 @@ void main() {
     Scanner sc = new Scanner(System.in);
 
     Auto auto1 = new Auto(1,"Škoda", "Octavia 2 Combi", false, 2012, 550);
-    Auto auto2 = new Auto(2,"Škoda", "Octavia 1 vRS", true, 2002, 900);
+    Auto auto2 = new Auto(2,"Škoda", "Octavia 1 vRS", true, 2002, 1200);
     Auto auto3 = new Auto(3,"Škoda", "Octavia 3 Scout", true, 2016, 900);
     Auto auto4 = new Auto(4, "Subaru", "Impreza WRX STI", true, 1998, 1700);
     Auto auto5 = new Auto(5, "Mitsubishi", "Lancer Evo VI", true, 2001, 1700);
@@ -40,21 +40,13 @@ void main() {
     pujcovna.addAuto(auto16);
 
 
-//    Zakaznik zakaznik1 = new Zakaznik(1,"Petr", "Pavel", 123456789);
+    Zakaznik zakaznik1 = new Zakaznik(1, "Lukáš", "Klicpera", 123456789);
 //    Zakaznik zakaznik2 = new Zakaznik(2, "Keichi", "Tsuchiya", 222333444);
 //    Zakaznik zakaznik3 = new Zakaznik(3, "Rowan", "Atkinson", 987654321);
 
-//    pujcovna.addZakaznik(zakaznik1);
+    pujcovna.addZakaznik(zakaznik1);
 //    pujcovna.addZakaznik(zakaznik2);
 //    pujcovna.addZakaznik(zakaznik3);
-
-//    Pujcka pujcka1 = new Pujcka(7, auto1, zakaznik1);
-//    Pujcka pujcka2 = new Pujcka(5, auto2, zakaznik2);
-//    Pujcka pujcka3 = new Pujcka(3, auto3, zakaznik3);
-
-//    pujcovna.addPujcka(pujcka1);
-//    pujcovna.addPujcka(pujcka2);
-//    pujcovna.addPujcka(pujcka3);
 
 
 
@@ -133,7 +125,7 @@ void main() {
 
 
             System.out.println("Pujcka: " + pujcka);
-            vybraneAuto.setTedZrovnaPujcene(false);
+            vybraneAuto.setTedPravePujcene(false);
         }
 
         if (vstupNum == 4) {

@@ -6,7 +6,7 @@ public class Auto {
     private int rokVyroby;
     private int cenaZaDen;
     private boolean jeVolne;
-    private boolean tedZrovnaPujcene;
+    private boolean tedPravePujcene;
 
     public Auto (int id, String znacka, String model, boolean jeManual, int rokVyroby, int cenaZaDen) {
         this.id = id;
@@ -16,7 +16,7 @@ public class Auto {
         this.rokVyroby = rokVyroby;
         setCenaZaDen(cenaZaDen);
         this.jeVolne = true;
-        this.tedZrovnaPujcene = false;
+        this.tedPravePujcene = false;
     }
 
     public int getId() {
@@ -27,8 +27,8 @@ public class Auto {
         this.id = id;
     }
 
-    public void setTedZrovnaPujcene(boolean tedZrovnaPujcene){
-        this.tedZrovnaPujcene = tedZrovnaPujcene;
+    public void setTedPravePujcene(boolean tedPravePujcene){
+        this.tedPravePujcene = tedPravePujcene;
     }
 
     public String getZnacka() {
@@ -63,16 +63,6 @@ public class Auto {
         this.rokVyroby = rokVyroby;
     }
 
-
-
-    public boolean jeStarsiNez(int rok) {
-        if (rokVyroby < rok) {
-            return true;
-        }
-        return false;
-    }
-
-
     public int getCenaZaDen() {
         return cenaZaDen;
     }
@@ -86,11 +76,9 @@ public class Auto {
         this.cenaZaDen = cenaZaDen;
     }
 
-    public boolean isJeVolne() {
+    public boolean getJeVolne() {
         return jeVolne;
     }
-
-
 
     public void setJeVolne(boolean jeVolne) {
         this.jeVolne = jeVolne;
@@ -100,20 +88,17 @@ public class Auto {
     @Override
     public String toString() {
 
-
 //        variable = (condition) ? expressionTrue :  expressionFalse;
         String typPrevodovky = jeManual ? ", převodovka: manuální" : ", převodovka: automatická";
 
         String isVolne;
         if (jeVolne) {
             isVolne = "auto je volné ";
-        } else if (tedZrovnaPujcene) {
+        } else if (tedPravePujcene) {
             isVolne = " auto jste si právě půjčil";
         } else {
-            isVolne = " auto je bohužel momentálně půjčené ";
+            isVolne = " auto je momentálně půjčené ";
         }
-
-
 
 
         return
@@ -127,4 +112,3 @@ public class Auto {
                 isVolne;
     }
 }
-

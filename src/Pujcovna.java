@@ -59,7 +59,7 @@ public class Pujcovna {
     public Auto[] findAuto(String hledejModelAuta) {
         int pocetShod = 0;
         for (int i = 0; i < pocetAut; i++) {
-            if (auta[i].getModel().toLowerCase().contains(hledejModelAuta.toLowerCase())){
+            if (auta[i].getModel().toLowerCase().contains(hledejModelAuta.toLowerCase())) {
                 pocetShod++;
             }
         }
@@ -71,13 +71,14 @@ public class Pujcovna {
                 autaShody[index++] = auta[i];
             }
         }
+
         return autaShody;
     }
 
 
 
 
-    public Zakaznik[] findZakazniky(String hledejZakPrijmeni) {
+    public Zakaznik[] findZakaznik(String hledejZakPrijmeni) {
 
         int pocetShod = 0;
         for (int i = 0; i < pocetZakazniku; i++) {
@@ -94,7 +95,7 @@ public class Pujcovna {
             }
         }
         return nalezeneShody;
-  }
+    }
 
 
 
@@ -107,13 +108,13 @@ public class Pujcovna {
           }
         }
         return null;
-    }
+  }
 
 
 
 
 
-    public void filtrCena(int maxCena) {
+  public void filtrCena(int maxCena) {
         boolean nalezeno = false;
 
         for (int i = 0; i < pocetAut; i++) {
@@ -126,20 +127,20 @@ public class Pujcovna {
         if (!nalezeno) {
             System.out.println("Nebyla nalezena žádná auta do požadované ceny za den.");
         }
-    }
+  }
 
 
 
 
-    public Pujcka pujcitAuto(int pocetDni, Auto auto, Zakaznik zakaznik) {
+  public Pujcka pujcitAuto(int pocetDni, Auto auto, Zakaznik zakaznik) {
 
         try {
-            if (!auto.isJeVolne()) {
-                throw new IllegalStateException("Bohužel, auto už je vypůjčené");
+            if (!auto.getJeVolne()) {
+                throw new IllegalStateException("Auto je momentálně vypůjčené");
             }
 
             auto.setJeVolne(false);
-            auto.setTedZrovnaPujcene(true);
+            auto.setTedPravePujcene(true);
 
             Pujcka pujckaX = new Pujcka(pocetDni, auto, zakaznik);
 
@@ -153,16 +154,17 @@ public class Pujcovna {
             System.out.println(e.getMessage());
             return null;
         }
-    }
+  }
 
 
 
-    public void vratitAuto(int idAuta, int faktDniPujcene) {
+  public void vratitAuto(int idAuta, int faktDniPujcene) {
         for (int i = 0; i < pocetPujcek; i++) {
             if (pujcky[i].getAuto().getId() == idAuta) {
                 int pokuta = pujcky[i].pokuta(faktDniPujcene);
                 if (pokuta > 0) {
-                    System.out.println("Bylo Vám naúčtováno " + pokuta + " Kč navíc za pozdní vrácení půjčenného auta.");
+                    System.out.println("Bylo Vám naúčtováno "
+                     + pokuta + " Kč navíc za pozdní vrácení půjčenného auta.");
                 }
                 pujcky[i].getAuto().setJeVolne(true);
                 vypisPujcek();
@@ -174,34 +176,34 @@ public class Pujcovna {
             }
 
         }
-    }
+  }
 
 
 
 
-    public int getPocetPujcek() {
+  public int getPocetPujcek() {
         return pocetPujcek;
-    }
+  }
 
 
 
-    public int getPocetVolnychAut() {
+  public int getPocetVolnychAut() {
         int volnaAuta = 0;
 
         for (int i = 0; i < pocetAut; i++) {
-            if (auta[i].isJeVolne()) {
+            if (auta[i].getJeVolne()) {
                 volnaAuta++;
             }
         }
         return volnaAuta;
-    }
+  }
 
 
-    public double celkVydelek() {
+  public double celkVydelek() {
         double suma = 0;
         for(int i = 0; i < pocetPujcek; i++) {
             suma += pujcky[i].totalCena();
         }
         return suma;
-     }
+  }
 }
