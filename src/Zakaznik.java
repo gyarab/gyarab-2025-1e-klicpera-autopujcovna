@@ -4,6 +4,12 @@ public class Zakaznik {
     private String prijmeni;
     private int telCislo;
     private int pujckyCount;
+    private Auto[] pujcenaAuta = new Auto[20];
+
+
+
+    private int pocetPujcenychAut = 0;
+
 
 
     public Zakaznik(int id, String jmeno, String prijmeni, int telCislo) {
@@ -12,6 +18,7 @@ public class Zakaznik {
         this.prijmeni = prijmeni;
         this.telCislo = telCislo;
     }
+
 
 
     public void zvyseniPoctuZakPujcek() {
@@ -53,6 +60,25 @@ public class Zakaznik {
 
     public int getPujckyCount() {
         return pujckyCount;
+    }
+
+
+    public void snizPocetPujcek(){
+        pocetPujcenychAut--;
+        System.out.println("Auto bylo vráceno, zbývající půjčená auta: " + pocetPujcenychAut);
+    }
+
+    public void setPujceneAuto(Auto pujceneAuto) {
+        pocetPujcenychAut++;
+        for (int i = 0; i < pocetPujcenychAut; i++) {
+            this.pujcenaAuta[i] = pujceneAuto;
+        }
+    }
+
+    public void vypisPujcenychAut() {
+        for (int i = 0; i < pocetPujcenychAut; i++) {
+            System.out.println(pujcenaAuta[i]);
+        }
     }
 
     @Override

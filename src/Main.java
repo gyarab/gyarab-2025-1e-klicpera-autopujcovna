@@ -135,7 +135,7 @@ void main() {
             System.out.println("Zadejte kolik dní jste skutečně auto měl:");
             int faktDniPujcene = sc.nextInt();
 
-            pujcovna.vratitAuto(idAuta, faktDniPujcene);
+            pujcovna.vratitAuto(idAuta, faktDniPujcene, zakaznik1);
         }
 
 

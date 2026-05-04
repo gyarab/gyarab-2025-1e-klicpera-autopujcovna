@@ -1,6 +1,11 @@
 public class Pujcka {
     private int pocetDni;
     private Auto auto;
+
+    public Zakaznik getZakaznik() {
+        return zakaznik;
+    }
+
     private Zakaznik zakaznik;
     private int pokuta = 0;
 

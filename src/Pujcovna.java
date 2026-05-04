@@ -18,6 +18,9 @@ public class Pujcovna {
         pujcky[pocetPujcek++] = pujcka;
     }
 
+    public int getPocetAut(){
+        return pocetAut;
+    }
 
     public void vypisAut() {
         for (int i = 0; i < pocetAut; i++) {
@@ -148,6 +151,8 @@ public class Pujcovna {
 
             zakaznik.zvyseniPoctuZakPujcek();
 
+            zakaznik.setPujceneAuto(auto);
+
             return pujckaX;
 
         } catch (IllegalStateException e) {
@@ -158,21 +163,22 @@ public class Pujcovna {
 
 
 
-  public void vratitAuto(int idAuta, int faktDniPujcene) {
+  public void vratitAuto(int idAuta, int faktDniPujcene, Zakaznik zakaznik) {
         for (int i = 0; i < pocetPujcek; i++) {
-            if (pujcky[i].getAuto().getId() == idAuta) {
+
+            if (pujcky[i].getAuto().getId() == idAuta && pujcky[i].getZakaznik() == zakaznik) {
                 int pokuta = pujcky[i].pokuta(faktDniPujcene);
                 if (pokuta > 0) {
                     System.out.println("Bylo Vám naúčtováno "
                      + pokuta + " Kč navíc za pozdní vrácení půjčenného auta.");
                 }
                 pujcky[i].getAuto().setJeVolne(true);
-                vypisPujcek();
 
+                zakaznik.snizPocetPujcek();
                 pujcky[i] = pujcky[pocetPujcek - 1];
                 pujcky[pocetPujcek - 1] = null;
                 pocetPujcek --;
-                vypisPujcek();
+                zakaznik.vypisPujcenychAut();
             }
 
         }
